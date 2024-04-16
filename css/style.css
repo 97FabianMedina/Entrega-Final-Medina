@@ -65,7 +65,7 @@ main{
 .boton{
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    background-color:hsl(158, 36%, 37%) ;
+    background-color:hsl(158, 36%, 37%);
     color: hsl(0, 0%, 100%);
     border: 0px;
     padding: 12px 10px 12px 10px; 
@@ -89,6 +89,10 @@ main{
 .d-flex .btn-text {
     color: hsl(0, 0%, 100%);
     border: 1px solid white;
+}
+.footer-text{
+    background-color:hsl(158, 36%, 37%);
+    color: white;
 }
 .carrito__boton{
     width: 1rem;
