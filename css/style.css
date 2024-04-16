@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Nova+Square&family=Roboto+Condensed:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:ital,wght@0,700;1,500&family=Nova+Square&family=Roboto+Condensed:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav .gap{ 
+    display: flex;
+    gap: 2rem;
+}
+.color-nav{
+    background-color:hsl(158, 36%, 37%) ;
+
+}
+.navbar-nav .nav-link {
+    color: hsl(0, 0%, 100%);
+}
+div .brand-text {
+    color: hsl(0, 0%, 100%);
+}
+.nav-item-carrito{
+    display: flex;
+    align-items: center;
+}
+
+main{
+    margin-inline:.9rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 90rem;
+    
+}
+.box{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+.box:hover{
+    transform: translateY(-5px); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); 
+}
+.camisas{
+    height: 15rem;
+}
+.main__precios{
+    display: flex;
+    align-items: center;
+}
+.precios__descuento{
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: hsl(158, 36%, 37%);
+}
+.precios__normal{
+    text-decoration: line-through;
+    color: gray;
+    padding-left: 30px;
+    font-size: small;
+}
+.boton{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    background-color:hsl(158, 36%, 37%) ;
+    color: hsl(0, 0%, 100%);
+    border: 0px;
+    padding: 12px 10px 12px 10px; 
+    font-weight: 700;
+    border-radius: 7px;
+    align-items: center;
+    gap: 10px;
+}
+.botones{
+    display: flex;
+    gap: 1rem;
+}
+.botones-cantidad{
+    display: flex;
+    gap: .2rem;
+    
+}
+.botones-cantidad .btn-text{
+    color: black;
+}
+.d-flex .btn-text {
+    color: hsl(0, 0%, 100%);
+    border: 1px solid white;
+}
+.carrito__boton{
+    width: 1rem;
+    height: 1rem;   
+}
+.boton:hover{
+    background-color: hsl(212, 21%, 14%);
+}
+
+@media (max-width: 767px){
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
