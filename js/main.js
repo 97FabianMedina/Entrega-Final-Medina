@@ -70,7 +70,7 @@ console.log("Codigo Nombre " + "  " + " Precio")
 carrito.mostrarProductos();
 
 // Pide al usuario ingresar la cantidad de productos a comprar
-let cantidadProductos = parseInt(prompt("Digite cuantos de los productos de la lista desea comprar"));
+let cantidadProductos = parseInt(prompt("Digite cuantos de los productos de la lista que se muestra por consola desea comprar"));
 
 // Valida la información ingresada por el usuario "cantidadProductos"
 if (!isNaN(cantidadProductos) && cantidadProductos > 0 && cantidadProductos <= 5) {
@@ -84,10 +84,15 @@ if (!isNaN(cantidadProductos) && cantidadProductos > 0 && cantidadProductos <= 5
         if (codigoProducto >= 1 && codigoProducto <= 5) {
             let cantidadProducto = parseInt(prompt("Ingrese la cantidad del producto con código " + codigoProducto + " que desea comprar"));
 
-            // Buscar el producto en el carrito por su código
-            let productoSeleccionado = carrito.productos.find(producto => producto.codigo === codigoProducto);
+            // let prueba = carrito.productos.forEach(indice => {
+            //     console.log(indice.nombre + "---" + indice.categoria);
+            // })
 
+            // Buscar el producto en el carrito por su código
+            let productoSeleccionado = carrito.productos.find
+            (producto => producto.codigo === codigoProducto);
             // Si se encuentra el producto y la cantidad es válida, calcular su precio y sumarlo al total
+
             if (productoSeleccionado && cantidadProducto > 0) {
                 totalPrecio += productoSeleccionado.precio * cantidadProducto;
             } else {
