@@ -107,6 +107,7 @@ if (!isNaN(cantidadProductos) && cantidadProductos > 0 && cantidadProductos <= 5
 
     // Mostrar el precio total de los productos seleccionados
     alert("El precio neto a pagar por los " + cantidadProductos + " productos es de $" + totalPrecio + " mil  pesos colombianos");
+    alert("¡Compra realida correctamente!")
 } else {
     alert("Cantidad de productos incorrecta. Solo puede comprar entre 1 y 5 productos.");
 }
