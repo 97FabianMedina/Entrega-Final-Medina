@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +35,8 @@
                         </ul>
                     </li>
                     <li class="nav-item nav-item-carrito">
-                        <img src="../Img/carrito.png" class="carrito__boton" alt="carrito_compras">
-                        <a class="nav-link active" href="paginas/carrito.html">Carrito de Compras</a>
+                        <img src="../Img/carrito.png" class="carrito__boton" alt="carrito_compras"><span class="carrito__numero" id="carrito__numero">0</span>
+                        <a class="nav-link active" href="carrito.html">Carrito de Compras</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -51,22 +50,25 @@
 
     <div id="contenedor-cards-carrito" class="contenedor-cards-carrito">
         <h2 class="texto-principal" id="texto-principal">Carrito de compras</h2>
-        <p id="carrito-vacio" class="carrito-vacio"></p>
+        <p id="carrito-vacio">No hay productos en el carrito  &#128543;</p>
+        <p id="mensaje-carrito-comprado">Gracias por su compra.</p>
         <!-- Se llena con JS de productos-->
     </div>
-
-    <div class="card mb-3 ">
-        <div class="row g-0 pagar-carrito">
-            <div class="col-md-6 vaciar-carrito">
-                <button type="button" class="btn btn-success  ">Vaciar Carrito
+    <div class="contenedor-botones-carrito">
+        <div class="card mb-3 botones-carrito">
+            <div class="row g-0 pagar-carrito">
+                <div class="col-md-5 vaciar-carrito">
+                    <button type="button" class="btn btn-success " id="vaciar-carrito">Vaciar Carrito
+                    </button>
+                </div>
+                <h5 class="col-md-3 total">Total a Pagar :</h5>
+                <p class="col-md-2 total-carrito" id="total-carrito">$0</p>
+                <button type="button" class="btn btn-success col-md-2 comprar-carrito" id="comprar-carrito">Comprar Ahora
                 </button>
             </div>
-            <h5 class="col-md-2 total">Total:</h5>
-            <p class="col-md-2 total-carrito" id="total-carrito">$120000</p>
-            <button type="button" class="btn btn-success col-md-2 comprar-carrito">Comprar Ahora
-            </button>
         </div>
     </div>
+    
 
     <footer class="bg-body-tertiary text-center footer">
         <div class="container p-4"></div>

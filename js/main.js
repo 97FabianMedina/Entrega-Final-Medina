@@ -20,22 +20,8 @@ class Carrito {
         return this.productos;
     };
     
-    calcularTotal() {
-        let total = 0; 
-        this.productosCarrito.forEach((objProducto) => {
-        
-        total += objProducto.precio * objProducto.cantidad;
-        });
-        return total; 
-    };
-
-    mostrarProductos() {
-        this.productos.forEach((objProducto) => {
-            console.log(objProducto.codigo + "      " + objProducto.nombre + "    " + objProducto.precio)
-        });
-    };
 }
-
+//Objetos productos
 const productos = [
     {
         id: "Camisa_Paisaje_1",
@@ -44,7 +30,7 @@ const productos = [
         imagen: "Img/Camisas/cam1.jpg",
         precioNormal: 80000,
         precioDescuento: 70000,
-        cantidad: 2
+        cantidad: 1
     },
     {
         id: "Buzo_Beisbol_1",
@@ -53,7 +39,7 @@ const productos = [
         imagen: "Img/Chaquetas/cha1.jpg",
         precioNormal: 140000,
         precioDescuento: 110000,
-        cantidad: 3
+        cantidad: 2
     },
     {
         id: "Camisa_Moderna_1",
@@ -62,7 +48,7 @@ const productos = [
         imagen: "Img/Camisas/cam7.jpg",
         precioNormal: 100000,
         precioDescuento: 80000,
-        cantidad: 4
+        cantidad: 3
     },
     {
         id: "Buzo_de_Lana_1",
@@ -80,7 +66,7 @@ const productos = [
         imagen: "Img/Jeans/j2.jpg",
         precioNormal: 90000,
         precioDescuento: 60000,
-        cantidad: 1
+        cantidad: 2
     },
     {
         id: "Buzo_Tortuga_1",
@@ -107,15 +93,18 @@ const productos = [
         imagen: "Img/Camisas/cam8.jpg",
         precioNormal: 65000,
         precioDescuento: 40000,
-        cantidad: 1
+        cantidad: 3
     }
 ];
 
 const contenedorProductos = document.querySelector("#contenedor-cards");
 let botonesAgregar = document.querySelectorAll(".agregar");
 let carritoNumero = document.querySelector("#carrito__numero");
+let inputCantidad = document.querySelector("#input__cantidad");
+let botonMas = document.querySelectorAll("#btn-mas");
+let botonMenos = document.querySelectorAll("#btn-menos");
 const carrito = new Carrito();
-
+//Funcion cargar productos
 function cargarProductos() {
     productos.forEach((producto) => {
         const div = document.createElement("div");
@@ -136,9 +125,9 @@ function cargarProductos() {
                     Agregar
                 </button>
                 <div class="botones-cantidad">
-                    <button type="button" class="btn btn-outline-success  btn-text btn-mas">+</button>
-                    <input type="text" class="form-control btn-text cantidad" value=${producto.cantidad} disabled>
-                    <button type="button" class="btn btn-outline-success btn-text btn-menos">-</button>
+                    <button type="button" class="btn btn-outline-success  btn-text btn-mas" id="btn-mas">+</button>
+                    <input type="text" class="form-control btn-text cantidad" id="input__cantidad" value="${producto.cantidad}" >
+                    <button type="button" class="btn btn-outline-success btn-text btn-menos" id="btn-menos">-</button>
                 </div>
             </div>
         </div>
@@ -147,27 +136,55 @@ function cargarProductos() {
         contenedorProductos.append(div);
     });
     botonesAgregarProducto();
+    botonesMasMenos();
 };
 
 cargarProductos();
-    
-
+//Funcion botones agregar    
 function botonesAgregarProducto(){
     botonesAgregar = document.querySelectorAll(".agregar");
     botonesAgregar.forEach(boton => {
         boton.addEventListener("click", agregarAlCarrito);
     });
 };
+//Funcion agregar al carrito
 function agregarAlCarrito(e){
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
     carrito.agregarProducto(productoAgregado);
     localStorage.setItem("productos-en-carrito", JSON.stringify(carrito.productosCarrito));
-    //actualizarNumeroCarrito();
-
+    actualizarNumeroCarrito();
 };
+//Funcion actualizar numero de productos en carrito
+function actualizarNumeroCarrito(){
+    let nuevoNumero = carrito.productosCarrito.reduce((total, producto) => total + producto.cantidad, 0);
+    carritoNumero.innerText = nuevoNumero;
+}
+//Funcion botones mas y menos en proceso de creacion 
+function botonesMasMenos(){
+    botonMas = document.querySelectorAll("#btn-mas");
+    botonMenos = document.querySelectorAll("#btn-menos");
+    botonMas.forEach(boton => {
+        boton.addEventListener("click", agregarMas);
+    });
+    botonMenos.forEach(boton => {
+        boton.addEventListener("click", agregarMenos);
+    });
+};
+//Funcion boton mas
+function agregarMas(){
+    inputCantidad = document.querySelector("#input__cantidad");
+    let cantidadProducto = parseInt(inputCantidad.value);
+    cantidadProducto++; 
+    inputCantidad.value = cantidadProducto; 
 
-// function actualizarNumeroCarrito(){
-//     let nuevoNumero = carrito.reduce((total, producto) => total + producto.cantidad, 0);
-//     carritoNumero.innerText = nuevoNumero;
-// }
+}
+//Funcion boton menos
+function agregarMenos(){
+    inputCantidad = document.querySelector("#input__cantidad");
+    let cantidadProducto = parseInt(inputCantidad.value); 
+    if (cantidadProducto > 0) { 
+        cantidadProducto--; 
+        inputCantidad.value = cantidadProducto; 
+    }
+};

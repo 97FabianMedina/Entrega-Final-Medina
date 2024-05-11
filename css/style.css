@@ -112,7 +112,13 @@ div .brand-text {
 .boton:hover{
     background-color: hsl(212, 21%, 14%);
 }
+
+
 /*Carrito*/
+.imagen-tamano{
+    width: 10rem;
+    height: 9rem;
+}
 .texto-principal{
     font-family: 'Fraunces', serif;
     font-size: 40px;
@@ -203,25 +209,36 @@ div .brand-text {
     width: 2rem;
     height: 2rem;
 }
+
+
+/*Botones del carrito*/
+.contenedor-botones-carrito{
+    margin-inline:3rem;
+    margin-top: 2rem;
+}
 .vaciar-carrito{
     display: flex;
-    padding-inline: 11rem;
+    flex-direction: column;
+    align-items: center; 
     justify-content: center;
-    
 }
 .pagar-carrito{
-    display: flex;
-    justify-content: center;
-    align-items: center
+    width: 100%;
+    
 }
-.total{
+
+.total, .total-carrito{
     font-family: 'Fraunces', serif;
     font-size: 30px;
     font-weight: 700;
     color: hsl(0, 0%, 0%);   
+
 }
 .footer{
-    margin-top: 22rem;
+    margin-top: 31.4rem;
+}
+.oculto {
+    display: none;
 }
 @media (max-width: 767px){
     main{
