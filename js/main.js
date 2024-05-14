@@ -39,7 +39,7 @@ const productos = [
         imagen: "Img/Chaquetas/cha1.jpg",
         precioNormal: 140000,
         precioDescuento: 110000,
-        cantidad: 2
+        cantidad: 1
     },
     {
         id: "Camisa_Moderna_1",
@@ -48,7 +48,7 @@ const productos = [
         imagen: "Img/Camisas/cam7.jpg",
         precioNormal: 100000,
         precioDescuento: 80000,
-        cantidad: 3
+        cantidad: 1
     },
     {
         id: "Buzo_de_Lana_1",
@@ -66,7 +66,7 @@ const productos = [
         imagen: "Img/Jeans/j2.jpg",
         precioNormal: 90000,
         precioDescuento: 60000,
-        cantidad: 2
+        cantidad: 1
     },
     {
         id: "Buzo_Tortuga_1",
@@ -93,7 +93,7 @@ const productos = [
         imagen: "Img/Camisas/cam8.jpg",
         precioNormal: 65000,
         precioDescuento: 40000,
-        cantidad: 3
+        cantidad: 1
     }
 ];
 
@@ -126,7 +126,7 @@ function cargarProductos() {
                 </button>
                 <div class="botones-cantidad">
                     <button type="button" class="btn btn-outline-success  btn-text btn-mas" id="btn-mas">+</button>
-                    <input type="text" class="form-control btn-text cantidad" id="input__cantidad" value="${producto.cantidad}" >
+                    <input type="text" class="form-control btn-text cantidad" id="input__cantidad_${producto.id}" value=${producto.cantidad} >
                     <button type="button" class="btn btn-outline-success btn-text btn-menos" id="btn-menos">-</button>
                 </div>
             </div>
@@ -150,7 +150,11 @@ function botonesAgregarProducto(){
 //Funcion agregar al carrito
 function agregarAlCarrito(e){
     const idBoton = e.currentTarget.id;
-    const productoAgregado = productos.find(producto => producto.id === idBoton);
+    const productoAgregado = productos.find(producto =>producto.id === idBoton
+    );
+    const inputCantidad = e.currentTarget.parentElement.querySelector(`#input__cantidad_${idBoton}`);
+    productoAgregado.cantidad = parseInt(inputCantidad.value);
+
     carrito.agregarProducto(productoAgregado);
     localStorage.setItem("productos-en-carrito", JSON.stringify(carrito.productosCarrito));
     actualizarNumeroCarrito();
@@ -172,19 +176,20 @@ function botonesMasMenos(){
     });
 };
 //Funcion boton mas
-function agregarMas(){
-    inputCantidad = document.querySelector("#input__cantidad");
+function agregarMas(e){
+    const idBoton = e.currentTarget.parentElement.parentElement.querySelector(".agregar").id;
+    const inputCantidad = e.currentTarget.parentElement.querySelector(`#input__cantidad_${idBoton}`);
     let cantidadProducto = parseInt(inputCantidad.value);
-    cantidadProducto++; 
-    inputCantidad.value = cantidadProducto; 
-
+    cantidadProducto++;
+    inputCantidad.value = cantidadProducto;
 }
 //Funcion boton menos
-function agregarMenos(){
-    inputCantidad = document.querySelector("#input__cantidad");
-    let cantidadProducto = parseInt(inputCantidad.value); 
-    if (cantidadProducto > 0) { 
-        cantidadProducto--; 
-        inputCantidad.value = cantidadProducto; 
+function agregarMenos(e){
+    const idBoton = e.currentTarget.parentElement.parentElement.querySelector(".agregar").id;
+    const inputCantidad = e.currentTarget.parentElement.querySelector(`#input__cantidad_${idBoton}`);
+    let cantidadProducto = parseInt(inputCantidad.value);
+    if (cantidadProducto > 1) {
+        cantidadProducto--;
+        inputCantidad.value = cantidadProducto;
     }
 };
