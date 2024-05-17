@@ -126,7 +126,7 @@ function cargarProductos() {
                 </button>
                 <div class="botones-cantidad">
                     <button type="button" class="btn btn-outline-success  btn-text btn-mas" id="btn-mas">+</button>
-                    <input type="text" class="form-control btn-text cantidad" id="input__cantidad_${producto.id}" value=${producto.cantidad} >
+                    <input type="text" class="form-control btn-text cantidad" id="input__cantidad_${producto.id}" value=${producto.cantidad} disabled>
                     <button type="button" class="btn btn-outline-success btn-text btn-menos" id="btn-menos">-</button>
                 </div>
             </div>
@@ -152,10 +152,14 @@ function agregarAlCarrito(e){
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto =>producto.id === idBoton
     );
+    if(carrito.productosCarrito.some(producto => producto.id === idBoton)){
+        const index = carrito.productosCarrito.findIndex(producto => producto.id === idBoton);
+        carrito.productosCarrito[index].cantidad++;
+    }else{ 
     const inputCantidad = e.currentTarget.parentElement.querySelector(`#input__cantidad_${idBoton}`);
     productoAgregado.cantidad = parseInt(inputCantidad.value);
-
     carrito.agregarProducto(productoAgregado);
+    }
     localStorage.setItem("productos-en-carrito", JSON.stringify(carrito.productosCarrito));
     actualizarNumeroCarrito();
 };

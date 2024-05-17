@@ -43,10 +43,7 @@ if (productosEnCarrito) {
                 <div class="col-md-2 botones-carrito">
                     <h5 class="cantidad_text">Cantidad</h5>
                     <div class="botones-cantidad-carrito">
-                        <button type="button" class="btn btn-outline-success  btn-text btn-mas-carrito">+</button>
-                        <input type="text" class="form-control btn-text cantidad-carrito" value=${producto.cantidad
-            } disabled>
-                        <button type="button" class="btn btn-outline-success btn-text btn-menos-carrito">-</button>
+                        <input type="text" class="form-control btn-text cantidad-carrito" value=${producto.cantidad} disabled>
                     </div>
                 </div>
                 <div class="col-md-2">
