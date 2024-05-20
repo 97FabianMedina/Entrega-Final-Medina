@@ -25,17 +25,17 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Todos los productos </a>
                     </li>
                     <div class="contenedor-categorias">
-                        <button class="btn-camisas btn-outline-success" type="submit">Camisas
+                        <button class="btn-camisas btn-outline-success" id="btn-camisas" type="submit">Camisas
                         </button>
-                        <button class="btn-chaquetas btn-outline-success" type="submit">Chaquetas
+                        <button class="btn-chaquetas btn-outline-success" id="btn-chaquetas" type="submit">Chaquetas/Buzos
                         </button>
-                        <button class="btn-jeans btn-outline-success" type="submit">Jeans
+                        <button class="btn-jeans btn-outline-success" id="btn-jeans" type="submit">Jeans
                         </button>
                     </div>
                     <li class="nav-item nav-item-carrito">
-                        <img src="Img/carrito.png" class="carrito__boton" alt="carrito_compras">
-                        <span class="carrito__numero" id="carrito__numero">0
-                        </span>
+                        <a href="paginas/carrito.html" class="link-carrito" ><img src="Img/carrito.png" class="carrito__boton" alt="carrito_compras"></a>
+                        <a href="paginas/carrito.html" class="link-carrito"><span class="carrito__numero" id="carrito__numero">0
+                        </span></a>
                         <a class="nav-link" href="paginas/carrito.html">Carrito de Compras</a>
                     </li>
                 </ul>
@@ -59,6 +59,9 @@
             <h6>© 2024 Copyright </h6>
         </div>
     </footer>
+        <!-- Librerias Externas -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Enlaces Porpios -->
     <script src="js/main.js" type="module"></script>
 </body>
 

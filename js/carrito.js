@@ -9,9 +9,6 @@ const totalCarrito = document.querySelector("#total-carrito");
 let carritoNumero = document.querySelector("#carrito__numero");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 const comprarCarrito = document.querySelector("#comprar-carrito");
-const mensajeCarritoComprado = document.querySelector(
-    "#mensaje-carrito-comprado"
-);
 //Actualizar numero en carrito
 let nuevoNumero = productosEnCarrito.reduce(
     (total, producto) => total + producto.cantidad,
@@ -21,8 +18,6 @@ carritoNumero.innerText = nuevoNumero;
 
 // Condicion para saber si hay o no productos en el carrito 
 if (productosEnCarrito) {
-    carritoVacio.innerText = "";
-    mensajeCarritoComprado.innerHTML = "";
 // Cargar productos en carrito
     productosEnCarrito.forEach((producto) => {
         const div = document.createElement("div");
@@ -84,25 +79,45 @@ totalCarrito.innerText = `$${total}`;
 
 // Vaciar carrito de compras
 vaciarCarrito.addEventListener("click", () => {
-    localStorage.removeItem("productos-en-carrito");
-    location.reload();
-    mensajeCarritoComprado = document.querySelector("#mensaje-carrito-comprado");
-    // El mensaje Gracias por su comprar no entiendo por que no quiere esconderse al precionar vaciar carrito "SOS"
+    Swal.fire({
+        title: "¿Estas seguro de Vaciar el carrito?",
+        text: "Despues de borrar los productos tienes que agregarlos de nuevo",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "si, Vaciar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+        Swal.fire({
+            title: "Carrito Vacio",
+            text: "Tu carrito de compras esta vacio",
+            icon: "success"
+        });
+        localStorage.removeItem("productos-en-carrito");
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
+        }
+    });
+    
 
-    // if (mensajeCarritoComprado) {
-    //     mensajeCarritoComprado.style.display = "none";
-    // }
-    //mensajeCarritoComprado.innerText = "";
-    //mensajeCarritoComprado.style.display = "none";
-    //mensajeCarritoComprado.classList.add('oculto');
-    //mensajeCarritoComprado.classList.add("visually-hidden");
+
 });
 
 
 // Comprar carrito de compras
     comprarCarrito.addEventListener("click", () => {
+        Swal.fire({
+            title: "Compra Exitosa!",
+            icon: "success",
+            showConfirmButton: false,
+        }); 
         localStorage.removeItem("productos-en-carrito");
-        location.reload();
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
     });
     
 

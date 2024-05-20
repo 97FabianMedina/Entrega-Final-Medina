@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Carrito</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -21,20 +22,20 @@
             <div class="collapse gap2 navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item todos-productos">
-                        <a class="nav-link" aria-current="page" href="../index.html">Seguir comprando </a>
+                        <a class="nav-link" aria-current="page" href="../index.html">Todos los productos</a>
                     </li>
                     <div class="contenedor-categorias">
-                        <button class="btn-camisas btn-outline-success" type="submit">Camisas
+                        <button class="btn-camisas btn-outline-success" id="btn-camisas" type="submit">Camisas
                         </button>
-                        <button class="btn-chaquetas btn-outline-success" type="submit">Chaquetas
+                        <button class="btn-chaquetas btn-outline-success" id="btn-chaquetas" type="submit">Chaquetas/Buzos
                         </button>
-                        <button class="btn-jeans btn-outline-success" type="submit">Jeans
+                        <button class="btn-jeans btn-outline-success" id="btn-jeans" type="submit">Jeans
                         </button>
                     </div>
                     <li class="nav-item nav-item-carrito">
-                        <img src="../Img/carrito.png" class="carrito__boton" alt="carrito_compras">
-                        <span class="carrito__numero" id="carrito__numero">0
-                        </span>
+                        <a href="carrito.html"><img src="../Img/carrito.png" class="carrito__boton" alt="carrito_compras"></a>
+                        <a href="carrito.html" class="link-carrito"><span class="carrito__numero" id="carrito__numero">0
+                        </span></a>
                         <a class="nav-link active" href="carrito.html">Carrito de Compras</a>
                     </li>
                 </ul>
@@ -49,8 +50,6 @@
 
     <div id="contenedor-cards-carrito" class="contenedor-cards-carrito">
         <h2 class="texto-principal" id="texto-principal">Carrito de compras</h2>
-        <p id="carrito-vacio">No hay productos en el carrito  &#128543;</p>
-        <p id="mensaje-carrito-comprado">Gracias por su compra.</p>
         <!-- Se llena con JS de productos-->
     </div>
     <div class="contenedor-botones-carrito">
@@ -76,7 +75,10 @@
             <h6>© 2024 Copyright </h6>
         </div>
     </footer>
-
+        <!-- Librerias Externas -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <!-- Enlaces Porpios -->
     <script src="../js/carrito.js"></script>
 </body>
 </html>

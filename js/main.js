@@ -27,6 +27,7 @@ const productos = [
         id: "Camisa_Paisaje_1",
         nombre: "Camisa Paisaje",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Camisas",
         imagen: "Img/Camisas/cam1.jpg",
         precioNormal: 80000,
         precioDescuento: 70000,
@@ -36,6 +37,7 @@ const productos = [
         id: "Buzo_Beisbol_1",
         nombre: "Buzo Beisbol",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Chaquetas",
         imagen: "Img/Chaquetas/cha1.jpg",
         precioNormal: 140000,
         precioDescuento: 110000,
@@ -45,6 +47,7 @@ const productos = [
         id: "Camisa_Moderna_1",
         nombre: "Camisa Moderna",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Camisas",
         imagen: "Img/Camisas/cam7.jpg",
         precioNormal: 100000,
         precioDescuento: 80000,
@@ -54,6 +57,7 @@ const productos = [
         id: "Buzo_de_Lana_1",
         nombre: "Chaqueta de Lana",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Chaquetas",
         imagen: "Img/Chaquetas/cha4.jpg",
         precioNormal: 160000,
         precioDescuento: 125000,
@@ -63,6 +67,7 @@ const productos = [
         id: "Jeans_Damas_1",
         nombre: "Jeans Damas",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Jeans",
         imagen: "Img/Jeans/j2.jpg",
         precioNormal: 90000,
         precioDescuento: 60000,
@@ -72,6 +77,7 @@ const productos = [
         id: "Buzo_Tortuga_1",
         nombre: "Buzo Tortuga",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Chaquetas",
         imagen: "Img/Chaquetas/cha3.jpg",
         precioNormal: 200000,
         precioDescuento: 150000,
@@ -81,6 +87,7 @@ const productos = [
         id: "Jeans_Caballero_1",
         nombre: "Jeans Caballero",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Jeans",
         imagen: "Img/Jeans/j7.jpg",
         precioNormal: 105000,
         precioDescuento: 75000,
@@ -90,6 +97,7 @@ const productos = [
         id: "Camisa_Dama_1",
         nombre: "Camisa Dama",
         descripcion: "La camiseta perfecta para cualquier ocasión.",
+        categoria: "Camisas",
         imagen: "Img/Camisas/cam8.jpg",
         precioNormal: 65000,
         precioDescuento: 40000,
@@ -105,8 +113,9 @@ let botonMas = document.querySelectorAll("#btn-mas");
 let botonMenos = document.querySelectorAll("#btn-menos");
 const carrito = new Carrito();
 //Funcion cargar productos
-function cargarProductos() {
-    productos.forEach((producto) => {
+function cargarProductos(productosParaCargar) {
+    contenedorProductos.innerHTML = '';
+    productosParaCargar.forEach((producto) => {
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
@@ -139,7 +148,44 @@ function cargarProductos() {
     botonesMasMenos();
 };
 
-cargarProductos();
+cargarProductos(productos);
+//Filtrar las camisas por cuando se le da click en el boton
+function botonCamisas (){
+    let botonCamisas = document.querySelector("#btn-camisas");
+    botonCamisas.addEventListener("click", filtrarCamisas)
+};
+function filtrarCamisas(){
+    const camisasFiltradas = productos.filter((el) => el.categoria === "Camisas");
+    cargarProductos(camisasFiltradas);
+};
+botonCamisas();
+
+//Filtrar las chaquetas por cuando se le da click en el boton
+function botonChaquetas(){
+    let botonChaquetas = document.querySelector("#btn-chaquetas");
+    botonChaquetas.addEventListener("click", filtrarChaquetas)
+};
+function filtrarChaquetas(){
+    const chaquetasFiltradas = productos.filter((el) => el.categoria === "Chaquetas");
+    cargarProductos(chaquetasFiltradas);
+};
+botonChaquetas();
+
+//Filtrar los jeans por cuando se le da click en el boton
+function botonJeans(){
+    let botonJeans = document.querySelector("#btn-jeans");
+    //colorNegro(botonJeans)
+    botonJeans.addEventListener("click", filtrarJeans)
+};
+function filtrarJeans(){
+    const jeansFiltrados = productos.filter((el) => el.categoria === "Jeans");
+    cargarProductos(jeansFiltrados);
+};
+botonJeans();
+// function colorNegro(boton){
+//     boton.classList.add("linea");
+// };
+
 //Funcion botones agregar    
 function botonesAgregarProducto(){
     botonesAgregar = document.querySelectorAll(".agregar");
