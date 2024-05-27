@@ -137,7 +137,7 @@
             "categoria": "Jeans",
             "imagen": "../Img/Jeans/j1.jpg",
             "precioNormal": 105000,
-            "precioDescuento": 75000,
+            "precioDescuento": 85000,
             "cantidad": 1
         },
         {
@@ -147,7 +147,7 @@
             "categoria": "Jeans",
             "imagen": "../Img/Jeans/j4.jpg",
             "precioNormal": 105000,
-            "precioDescuento": 75000,
+            "precioDescuento": 95000,
             "cantidad": 1
         },
         {
@@ -166,8 +166,8 @@
             "descripcion": "La camiseta perfecta para cualquier ocasión.",
             "categoria": "Jeans",
             "imagen": "../Img/Jeans/j10.jpg",
-            "precioNormal": 105000,
-            "precioDescuento": 75000,
+            "precioNormal": 115000,
+            "precioDescuento": 100000,
             "cantidad": 1
         },
         {
@@ -176,8 +176,8 @@
             "descripcion": "La camiseta perfecta para cualquier ocasión.",
             "categoria": "Jeans",
             "imagen": "../Img/Jeans/j6.jpg",
-            "precioNormal": 105000,
-            "precioDescuento": 75000,
+            "precioNormal": 107000,
+            "precioDescuento": 85000,
             "cantidad": 1
         },
         {
@@ -186,8 +186,8 @@
             "descripcion": "La camiseta perfecta para cualquier ocasión.",
             "categoria": "Jeans",
             "imagen": "../Img/Jeans/j5.jpg",
-            "precioNormal": 105000,
-            "precioDescuento": 75000,
+            "precioNormal": 110000,
+            "precioDescuento": 90000,
             "cantidad": 1
         }
     ]

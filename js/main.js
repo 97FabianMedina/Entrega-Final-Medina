@@ -56,10 +56,16 @@ function cargarProductos(productosParaCargar) {
 };
 
 fetch("../data/productos.json")
-.then((resp) =>resp.json())
+.then((resp) => {
+    console.log(resp); // Agrega esta línea para imprimir la respuesta en la consola
+    return resp.json();
+})
 .then((data) =>{
     productos = data.productos
     cargarProductos(productos);
+})
+.catch((error) => {
+    console.error('Error al procesar la solicitud:', error);
 });
 //Filtrar las camisas por cuando se le da click en el boton
 function botonCamisas (){
