@@ -1,0 +1,194 @@
+{
+    "productos": [
+        {
+            "id": "Camisa_Paisaje_1",
+            "nombre": "Camisa Paisaje",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam1.jpg",
+            "precioNormal": 80000,
+            "precioDescuento": 70000,
+            "cantidad": 1
+        },
+        {
+            "id": "Buzo_Beisbol_1",
+            "nombre": "Buzo Beisbol",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Chaquetas",
+            "imagen": "../Img/Chaquetas/cha1.jpg",
+            "precioNormal": 140000,
+            "precioDescuento": 110000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisa_Moderna_1",
+            "nombre": "Camisa Moderna",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam7.jpg",
+            "precioNormal": 100000,
+            "precioDescuento": 80000,
+            "cantidad": 1
+        },
+        {
+            "id": "Buzo_de_Lana_1",
+            "nombre": "Chaqueta de Lana",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Chaquetas",
+            "imagen": "../Img/Chaquetas/cha4.jpg",
+            "precioNormal": 160000,
+            "precioDescuento": 125000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_Damas_1",
+            "nombre": "Jeans Damas",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j2.jpg",
+            "precioNormal": 90000,
+            "precioDescuento": 60000,
+            "cantidad": 1
+        },
+        {
+            "id": "Buzo_Tortuga_1",
+            "nombre": "Buzo Tortuga",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Chaquetas",
+            "imagen": "../Img/Chaquetas/cha3.jpg",
+            "precioNormal": 200000,
+            "precioDescuento": 150000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_Caballero_1",
+            "nombre": "Jeans Caballero",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j7.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisa_Dama_1",
+            "nombre": "Camisa Dama",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam8.jpg",
+            "precioNormal": 65000,
+            "precioDescuento": 40000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisas_Colores_1",
+            "nombre": "Camisas de Colores",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam9.jpg",
+            "precioNormal": 80000,
+            "precioDescuento": 60000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisa_Caballero_1",
+            "nombre": "Camissta Caballero",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam10.jpg",
+            "precioNormal": 100000,
+            "precioDescuento": 80000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisa_Futbol_1",
+            "nombre": "Camisa Futbol",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam6.jpg",
+            "precioNormal": 90000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisa_Roja_1",
+            "nombre": "Camisa Roja",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam4.jpg",
+            "precioNormal": 65000,
+            "precioDescuento": 50000,
+            "cantidad": 1
+        },
+        {
+            "id": "Camisa_blanca_1",
+            "nombre": "Camisa Blanca",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Camisas",
+            "imagen": "../Img/Camisas/cam2.jpg",
+            "precioNormal": 60000,
+            "precioDescuento": 55000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_1",
+            "nombre": "Jeans Unisex",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j1.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_women_1",
+            "nombre": "Jeans Slim",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j4.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_variados_1",
+            "nombre": "Jeans",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j9.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_women_2",
+            "nombre": "Jeans Moderno",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j10.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_hombre",
+            "nombre": "Jeans clasico",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j6.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        },
+        {
+            "id": "Jeans_entubado",
+            "nombre": "Jeans Entubado",
+            "descripcion": "La camiseta perfecta para cualquier ocasión.",
+            "categoria": "Jeans",
+            "imagen": "../Img/Jeans/j5.jpg",
+            "precioNormal": 105000,
+            "precioDescuento": 75000,
+            "cantidad": 1
+        }
+    ]
+}

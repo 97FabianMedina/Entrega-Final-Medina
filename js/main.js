@@ -1,3 +1,4 @@
+// import { botonCamisas } from "./utilidades.js";
 class Carrito {
     constructor() {
         this.productosCarrito = [];
@@ -22,88 +23,6 @@ class Carrito {
     
 }
 //Objetos productos
-const productos = [
-    {
-        id: "Camisa_Paisaje_1",
-        nombre: "Camisa Paisaje",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Camisas",
-        imagen: "Img/Camisas/cam1.jpg",
-        precioNormal: 80000,
-        precioDescuento: 70000,
-        cantidad: 1
-    },
-    {
-        id: "Buzo_Beisbol_1",
-        nombre: "Buzo Beisbol",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Chaquetas",
-        imagen: "Img/Chaquetas/cha1.jpg",
-        precioNormal: 140000,
-        precioDescuento: 110000,
-        cantidad: 1
-    },
-    {
-        id: "Camisa_Moderna_1",
-        nombre: "Camisa Moderna",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Camisas",
-        imagen: "Img/Camisas/cam7.jpg",
-        precioNormal: 100000,
-        precioDescuento: 80000,
-        cantidad: 1
-    },
-    {
-        id: "Buzo_de_Lana_1",
-        nombre: "Chaqueta de Lana",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Chaquetas",
-        imagen: "Img/Chaquetas/cha4.jpg",
-        precioNormal: 160000,
-        precioDescuento: 125000,
-        cantidad: 1
-    },
-    {
-        id: "Jeans_Damas_1",
-        nombre: "Jeans Damas",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Jeans",
-        imagen: "Img/Jeans/j2.jpg",
-        precioNormal: 90000,
-        precioDescuento: 60000,
-        cantidad: 1
-    },
-    {
-        id: "Buzo_Tortuga_1",
-        nombre: "Buzo Tortuga",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Chaquetas",
-        imagen: "Img/Chaquetas/cha3.jpg",
-        precioNormal: 200000,
-        precioDescuento: 150000,
-        cantidad: 1
-    },
-    {
-        id: "Jeans_Caballero_1",
-        nombre: "Jeans Caballero",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Jeans",
-        imagen: "Img/Jeans/j7.jpg",
-        precioNormal: 105000,
-        precioDescuento: 75000,
-        cantidad: 1
-    },
-    {
-        id: "Camisa_Dama_1",
-        nombre: "Camisa Dama",
-        descripcion: "La camiseta perfecta para cualquier ocasión.",
-        categoria: "Camisas",
-        imagen: "Img/Camisas/cam8.jpg",
-        precioNormal: 65000,
-        precioDescuento: 40000,
-        cantidad: 1
-    }
-];
 
 const contenedorProductos = document.querySelector("#contenedor-cards");
 let botonesAgregar = document.querySelectorAll(".agregar");
@@ -112,6 +31,7 @@ let inputCantidad = document.querySelector("#input__cantidad");
 let botonMas = document.querySelectorAll("#btn-mas");
 let botonMenos = document.querySelectorAll("#btn-menos");
 const carrito = new Carrito();
+let productos = [];
 //Funcion cargar productos
 function cargarProductos(productosParaCargar) {
     contenedorProductos.innerHTML = '';
@@ -148,7 +68,12 @@ function cargarProductos(productosParaCargar) {
     botonesMasMenos();
 };
 
-cargarProductos(productos);
+fetch("../data/productos.json")
+.then((resp) =>resp.json())
+.then((data) =>{
+    productos = data.productos
+    cargarProductos(productos);
+});
 //Filtrar las camisas por cuando se le da click en el boton
 function botonCamisas (){
     let botonCamisas = document.querySelector("#btn-camisas");
