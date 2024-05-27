@@ -7,19 +7,6 @@ class Carrito {
     agregarProducto(producto) {
         this.productosCarrito.push(producto);
     };
-    agregarIva(){
-        let totalIva = 0;
-        this.productosCarrito.forEach((objProducto) =>{
-            totalIva += (objProducto.precio * objProducto.cantidad) * 0.19; //Iva de colombia 19%
-        });
-        return totalIva;
-    };
-    
-    vaciarCarrito(){
-        this.productosCarrito.splice(0, this.productosCarrito.length);
-        this.productosCarrito.push(0);
-        return this.productos;
-    };
     
 }
 //Objetos productos
@@ -107,9 +94,6 @@ function filtrarJeans(){
     cargarProductos(jeansFiltrados);
 };
 botonJeans();
-// function colorNegro(boton){
-//     boton.classList.add("linea");
-// };
 
 //Funcion botones agregar    
 function botonesAgregarProducto(){
